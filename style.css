@@ -33,3 +33,12 @@ body {
 .input-control input:focus{
     outline: none;
 }
+
+.input-control.success {
+    border-color: green;
+}
+
+.input-control.error {
+    border-color: red
+}
+
