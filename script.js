@@ -20,6 +20,19 @@ const setError=(element, message)=> {
     inputControl.classList.remove('success')
 }
 
+const setSuccess = (element)=>{
+    const inputControl = element.parentElement;
+    const errorDisplay = input.querySelector('.error')
+
+    errorDisplay.innerText = ''
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error')
+}
+
+const isValidEmail= (email)=>{
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
 
 const validateInputs= ()=> {
     const firstNameValue = firstName.value.trim();
@@ -31,6 +44,34 @@ const validateInputs= ()=> {
     if (firstNameValue === ''){
         setError(firstName, 'First Name is Required')
     }else{
-        setSucess(firstName)
+        setSuccess(firstName)
+    }
+
+    if (lastNameValue === ''){
+        setError(lastName, 'Last Name is Required')
+    }else{
+        setSuccess(lastName)
+    }
+
+    if (emailValue === ''){
+        setError(email, 'Email is required')
+    }if (!isValidEmail(emailValue)){
+        setError(email, 'Please provide a valid email address')
+    }else{
+        setSuccess(email)
+    }
+
+    if(passwordValue === ''){
+        setError(password, 'Password is required')
+    }if (passwordValue.length < 8){
+        setError(password, 'Password must be 8 characters.')
+    }else{
+        setSuccess(password)
+    }
+
+    if (passwordValue !== passwordCheckValue){
+        setError(passwordCheck, 'Passwords must match')
+    }else{
+        setSuccess(passwordCheck)
     }
 }
