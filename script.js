@@ -65,20 +65,21 @@ const validateInputs= ()=> {
     if(passwordValue === ''){
         setError(password, 'Password is required')
     }if (passwordValue.length < 8){
-        setError(password, 'Password must be 8 characters.')
+        setError(password, 'Password must be more then 8 characters.')
     }else{
         setSuccess(password)
     }
   
     if (passwordValue !== passwordCheckValue){
         setError(passwordCheck, 'Passwords must match')
-        console.log(passwordValue, passwordCheckValue)
     }else if ( passwordCheckValue === ''){
         setError(passwordCheck, 'Please enter your password a second time.')
+    }else if (passwordCheckValue.length < 8){
+        setError(passwordCheck, 'Password must be more then 8 characters.')
     }else{
         setSuccess(passwordCheck)
     }
 
-    return passwordCheckValue+ passwordValue
+    
 }
 
