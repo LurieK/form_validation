@@ -72,7 +72,8 @@ const validateInputs= ()=> {
   
     if (passwordValue !== passwordCheckValue){
         setError(passwordCheck, 'Passwords must match')
-    }if ( passwordCheckValue === ''){
+        console.log(passwordValue, passwordCheckValue)
+    }else if ( passwordCheckValue === ''){
         setError(passwordCheck, 'Please enter your password a second time.')
     }else{
         setSuccess(passwordCheck)
