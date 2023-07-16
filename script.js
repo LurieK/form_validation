@@ -41,6 +41,7 @@ const validateInputs= ()=> {
     const passwordValue = password.value.trim();
     const passwordCheckValue = passwordCheck.value.trim();
 
+
     if (firstNameValue === ''){
         setError(firstName, 'First Name is Required')
     }else{
@@ -68,10 +69,15 @@ const validateInputs= ()=> {
     }else{
         setSuccess(password)
     }
-
+  
     if (passwordValue !== passwordCheckValue){
         setError(passwordCheck, 'Passwords must match')
+    }if ( passwordCheckValue === ''){
+        setError(passwordCheck, 'Please enter your password a second time.')
     }else{
         setSuccess(passwordCheck)
     }
+
+    return passwordCheckValue+ passwordValue
 }
+
