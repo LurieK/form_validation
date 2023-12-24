@@ -8,9 +8,9 @@ This project is a web-based form validation system designed to enhance user inpu
 
 To visualize the functionality and layout of the form, the following images are included:
 
-1. **Basic Form Layout**: ![Basic Form Layout](path-to-basic-form-image)
-2. **Validation in Action**: ![Validation in Action](path-to-validation-image)
-3. **Error Display**: ![Error Display](path-to-error-display-image)
+1. **Basic Form Layout**: ![Basic Form Layout](./form.png)
+2. **Validation in Action**: ![Validation in Action](./password_error)
+
 
 Replace `path-to-basic-form-image`, `path-to-validation-image`, and `path-to-error-display-image` with the actual paths where you've stored the images in your repository.
 
